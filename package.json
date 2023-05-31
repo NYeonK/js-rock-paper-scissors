@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --watch --mode=development",
-    "start": "webpack --mode=production"
+    "build": "webpack serve --open --mode=development",
+    "start": "webpack --mode=production",
+    "watch": "webpack --watch"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "html-webpack-plugin": "^5.5.1",
     "style-loader": "^3.3.3",
     "webpack": "^5.84.1",
-    "webpack-cli": "^5.1.1"
+    "webpack-cli": "^5.1.1",
+    "webpack-dev-server": "^4.15.0"
   }
 }
