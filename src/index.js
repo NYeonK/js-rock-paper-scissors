@@ -1,3 +1,3 @@
-import gameProgress from "./gameProgress";
+import gameProgress from "./game-progress";
 
 gameProgress();
