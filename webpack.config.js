@@ -8,17 +8,17 @@ module.exports = {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
-    //publicPath: "/",
+    publicPath: "/",
   },
-  // devServer: {
-  //   static: {
-  //     directory: path.resolve(__dirname, "dist"),
-  //   },
-  //   compress: true,
-  //   port: 3000,
-  //   historyApiFallback: true,
-  //   host: "localhost",
-  // },
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, "dist"),
+    },
+    compress: true,
+    port: 3000,
+    historyApiFallback: true,
+    host: "localhost",
+  },
   module: {
     rules: [
       {
