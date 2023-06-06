@@ -10,6 +10,11 @@ module.exports = {
     clean: true,
     publicPath: "/",
   },
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "src"),
+    },
+  },
   devServer: {
     static: {
       directory: path.resolve(__dirname, "dist"),
