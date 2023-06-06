@@ -10,15 +10,15 @@ module.exports = {
     clean: true,
     publicPath: "/",
   },
-  devServer: {
-    static: {
-      directory: path.resolve(__dirname, "docs"),
-    },
-    compress: true,
-    port: 3000,
-    historyApiFallback: true,
-    host: "localhost",
-  },
+  // devServer: {
+  //   static: {
+  //     directory: path.resolve(__dirname, "docs"),
+  //   },
+  //   compress: true,
+  //   port: 3000,
+  //   historyApiFallback: true,
+  //   host: "localhost",
+  // },
   module: {
     rules: [
       {
