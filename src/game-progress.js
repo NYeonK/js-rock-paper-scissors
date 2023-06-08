@@ -1,10 +1,18 @@
-import ImgRock from "@/assets/img-1.png";
+import img1 from "@/assets/scissors.png";
+import img2 from "@/assets/rock.png";
+import img3 from "@/assets/paper.png";
+
+const imgArr = [img1, img2, img3];
+const $ = (selector) => document.querySelector(selector);
+const gameImage = $(".gameImage");
+let currentIndex = 0;
 
 export default function gameProgress() {
-  const gameImage = document.querySelector(".gameImage");
-  const test = document.querySelector("#test");
-  test.appendChild(document.createTextNode("안녕?"));
+  gameImage.innerHTML = "";
+
   const img = new Image();
-  img.src = ImgRock;
+  img.src = imgArr[currentIndex];
   gameImage.appendChild(img);
+
+  currentIndex = (currentIndex + 1) % imgArr.length;
 }
