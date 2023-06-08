@@ -1,4 +1,4 @@
-import ImgRock from "@/assets/img-1.png";
+import ImgRock from "/assets/img-1.png";
 
 export default function gameProgress(name) {
   const gameImage = document.querySelector(".gameImage");
