@@ -4,7 +4,9 @@ import img3 from "@/assets/paper.png";
 import "./style.css";
 
 const $ = (selector) => document.querySelector(selector);
+const $$ = (selector) => document.querySelectorAll(selector);
 const gameImage = $(".gameImage");
+const userSelectedButton = $$(".option");
 
 let currentImg = "";
 let lastSelectImg = "";
@@ -38,5 +40,12 @@ function changeGameImage() {
 }
 
 window.onload = function () {
-  setInterval(changeGameImage, 300);
+  const interval = setInterval(changeGameImage, 300);
+  userSelectedButton.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      console.log("컴퓨터 값: ", lastSelectImg);
+      console.log("사용자 값: ", index);
+      clearInterval(interval);
+    });
+  });
 };
