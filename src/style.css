@@ -1,4 +1,26 @@
-#test {
-  background-color: red;
-  height: 3rem;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.option {
+  width: 10rem;
+  height: 5rem;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#option_scissors {
+  background-image: url("/src/assets/scissors.png");
+}
+
+#option_rock {
+  background-image: url("/src/assets/rock.png");
+}
+
+#option_paper {
+  background-image: url("/src/assets/paper.png");
 }
