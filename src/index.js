@@ -47,7 +47,7 @@ const getGameResult = (computer, user) => {
   };
 
   if (computer === user) {
-    return console.log(results.draw);
+    return alert(results.draw);
   }
 
   if (
@@ -55,18 +55,23 @@ const getGameResult = (computer, user) => {
     (computer === 1 && user === 0) ||
     (computer === 2 && user === 1)
   ) {
-    return console.log(results.lose);
+    return alert(results.lose);
   }
 
-  return console.log(results.win);
+  return alert(results.win);
+};
+
+const replayGame = () => {
+  setInterval(changeGameImage, 300);
 };
 
 window.onload = function () {
   const interval = setInterval(changeGameImage, 300);
   userSelectedButton.forEach((button, index) => {
     button.addEventListener("click", () => {
-      getGameResult(lastSelectImg, index);
       clearInterval(interval);
+      getGameResult(lastSelectImg, index);
+      replayGame();
     });
   });
 };
