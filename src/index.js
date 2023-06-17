@@ -4,7 +4,9 @@ import img3 from "@/assets/paper.png";
 import "./style.css";
 
 const $ = (selector) => document.querySelector(selector);
+const $$ = (selector) => document.querySelectorAll(selector);
 const gameImage = $(".gameImage");
+const userSelectedButton = $$(".option");
 
 let currentImg = "";
 let lastSelectImg = "";
@@ -37,6 +39,39 @@ function changeGameImage() {
   }
 }
 
-window.onload = function () {
+const getGameResult = (computer, user) => {
+  const results = {
+    draw: "무승부",
+    win: "승리",
+    lose: "패배",
+  };
+
+  if (computer === user) {
+    return alert(results.draw);
+  }
+
+  if (
+    (computer === 0 && user === 2) ||
+    (computer === 1 && user === 0) ||
+    (computer === 2 && user === 1)
+  ) {
+    return alert(results.lose);
+  }
+
+  return alert(results.win);
+};
+
+const replayGame = () => {
   setInterval(changeGameImage, 300);
+};
+
+window.onload = function () {
+  const interval = setInterval(changeGameImage, 300);
+  userSelectedButton.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      clearInterval(interval);
+      getGameResult(lastSelectImg, index);
+      replayGame();
+    });
+  });
 };
